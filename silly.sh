@@ -1,12 +1,15 @@
 #!/bin/bash
 set -x
 
+touch /tmp/init.log
+exec > /tmp/init.log 2>&1
+
 disk_dev=/dev/sda4
 work_dir=/xinyu-work
 chipyard_repo=https://github.com/ucb-bar/chipyard.git
 conda=$work_dir/miniforge3/bin/conda
 benchmarks=/xinyu-work/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/share/riscv-tests/benchmarks/
-my boom=git@github.com:xinyu199/riscv-boom.git
+my boom=https://github.com/xinyu199/riscv-boom.git
 
 # mount a filesystem
 echo "Formatting $disk_dev, mounting to $work_dir"
