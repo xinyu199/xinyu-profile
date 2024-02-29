@@ -9,7 +9,7 @@ work_dir=/xinyu-work
 chipyard_repo=https://github.com/ucb-bar/chipyard.git
 conda=$work_dir/miniforge3/bin/conda
 benchmarks=/xinyu-work/chipyard/.conda-env/riscv-tools/riscv64-unknown-elf/share/riscv-tests/benchmarks/
-my boom=https://github.com/xinyu199/riscv-boom.git
+my_boom=https://github.com/xinyu199/riscv-boom.git
 
 # mount a filesystem
 echo "Formatting $disk_dev, mounting to $work_dir"
