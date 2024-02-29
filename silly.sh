@@ -52,6 +52,13 @@ export PATH="$PATH:$work_dir/miniforge3/bin"
 echo "$PATH"
 source build-setup.sh riscv-tools -s 6 -s 7 -s 8 -s 9
 
+# replace boom repo
+git config --global --add safe.directory $work_dir/chipyard
+rm -rf $work_dir/chipyard/generators/boom
+git clone $my_boom $work_dir/chipyard/generators/boom
+cd $work_dir/chipyard/generators/boom
+git switch dev
+
 $conda env list
 source $work_dir/chipyard/env.sh
 $conda env list
